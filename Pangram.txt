@@ -21,7 +21,7 @@ END FOR
 
 IF isPangram = TRUE
   THEN
-    OUTPUT "Sentense enetered is pangram."
+    OUTPUT "Sentence enetered is pangram."
   ELSE
-    OUTPUT "Sentense enetered is NOT pangram."
+    OUTPUT "Sentence enetered is NOT pangram."
 END IF
