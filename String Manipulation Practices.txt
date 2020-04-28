@@ -1,0 +1,11 @@
+String Manipulation Programs:
+1) First word of one string and last word of another string.
+2) Finding and truncating a character from a string
+3) Finding and replacing of a character from a string
+4) Counting number of alphabets and digits in a string
+5) Inverse a string
+6) Finding the number of vowels (aeiou) in a string
+7) Finding if two strings are Anagram
+8) Find if a string is Pangram
+9) Find abbreviation of given name
+10) String Validation (Format check.)

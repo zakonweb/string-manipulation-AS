@@ -1,0 +1,16 @@
+X="Zafar Ali Khan"
+   123456789    14
+
+a=LEN(X)		14		INT
+b=LEFT(X,5)		"Zafar"		STRING
+c=RIGHT(X,4)		"Khan"		STRING
+d=MID(X,7,3)		"Ali"		STRING
+e=InStr(X," ")		6		INT
+f=InStr(e+1,X," ")	10		INT
+g=ASC("A")		65		INT
+h=CHR(67)		"C"		CHAR
+i=b & " " & c		"Zafar Khan"	STRING
+j=STR(34)		"34"		STRING
+k=VAL("123 ASAD")	123		INT/REAL/CURR
+m=UCASE("asdf")		"ASDF"		STRING
+n=LCASE("ZAFAR")	"zafar"		STRING

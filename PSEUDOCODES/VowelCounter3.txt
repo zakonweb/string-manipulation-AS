@@ -1,0 +1,9 @@
+FOR sCount = 1 to LENGTH(STR1)
+    nextChar = MID(STR1, sCount, 1)
+    IF nextChar = 'A' OR nextChar = 'E' OR _
+       nextChar = 'I' OR nextChar = 'O' OR _
+       nextChar = 'U' 
+      THEN
+        vowelCount = vowelCount + 1
+    END IF
+END FOR sCount

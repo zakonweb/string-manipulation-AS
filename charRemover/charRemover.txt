@@ -1,0 +1,27 @@
+DECLARE myChar : CHARACTER
+DECLARE Counter : INTEGER
+DECLARE outString: STRING
+DECLARE X : STRING
+DECLARE C : CHARACTER
+
+X = ""
+myChar = ''
+Counter = 0
+outString = ""
+c = ''
+
+OUTPUT "Enter String: "
+INPUT X
+
+OUTPUT "Enter character to remove : "
+INPUT C
+
+For Counter  = 1 to LENGTH(X)
+    myChar = MID(X,Counter,1)
+    IF myChar <> C 
+      THEN
+        outString = outString & myChar
+    ENDIF
+END FOR
+
+OUTPUT outString
