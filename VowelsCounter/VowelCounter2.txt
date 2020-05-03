@@ -1,0 +1,16 @@
+VOWELS = "AEIOUaeiou"
+INPUT STR1
+
+FOR vCount = 1 to LENGTH(VOWELS)
+    nextVowel = MID(VOWELS, vCount, 1)
+
+    FOR sCount = 1 to LENGTH(STR1)
+        nextChar = MID(STR1, sCount, 1)
+        IF nextChar = nextVowel
+          THEN
+            vowelCount = vowelCount + 1
+        END IF
+    END FOR sCount
+END FOR vCOunt
+
+OUTPUT "Total number of vowels = ", vowelCount

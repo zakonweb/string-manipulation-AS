@@ -1,0 +1,27 @@
+FOR sCount = 1 to LENGTH(STR1)
+    nextChar = MID(STR1, sCount, 1)
+    IF nextChar = 'A'
+      THEN
+        vowelCount = vowelCount + 1
+    END IF
+
+    IF nextChar = 'E'
+      THEN
+        vowelCount = vowelCount + 1
+    END IF
+
+    IF nextChar = 'I'
+      THEN
+        vowelCount = vowelCount + 1
+    END IF
+
+    IF nextChar = 'O'
+      THEN
+        vowelCount = vowelCount + 1
+    END IF
+
+    IF nextChar = 'U'
+      THEN
+        vowelCount = vowelCount + 1
+    END IF
+END FOR sCount
