@@ -1,0 +1,36 @@
+DECLARE testCases : Integer = 0
+DECLARE count0 : Integer = 0
+DECLARE count1 : Integer = 0
+DECLARE count3 : Integer = 0
+DECLARE countOf2 : Integer = 0
+DECLARE inputCount : Integer = 0
+DECLARE numStr : String = ""
+DECLARE i : Char = ""
+DECLARE ansLst[1:100] : Integer
+DECLARE arrPos : Integer = 0
+
+OUTPUT "Input:"
+INPUT testCases
+
+FOR count0 = 1 To testCases
+    INPUT inputCount
+    countOf2 = 0
+
+    FOR count1 = 0 To inputCount
+	numStr = Trim(Str(count1))
+	FOR count3 = 1 To Len(numStr)
+    	    i = Mid(numStr, count3, 1)
+    	    IF i = "2" Then countOf2 += 1
+	NEXT
+    NEXT
+
+    IF countOf2 > 0 Then
+	ansLst(arrPos) = countOf2
+	arrPos += 1
+    END IF
+NEXT
+
+OUTPUT "Output:"
+FOR count3 = 0 To arrPos - 1
+    OUTPUT ansLst(count3)
+NEXT
