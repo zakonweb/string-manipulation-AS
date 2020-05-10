@@ -1,0 +1,80 @@
+Srting Validation Rules:
+
+1) Apply length check and return FALSE if length not exactly as required.
+2) Count would go on for the number of characters in given string
+3) Logically group the format patterns; and
+   create case for every group.
+4) As soon as ANY of the case boiles down to FALSE; break the function and return FALSE.
+
+For Example:
+aaa*AAA-9999
+
+
+Function Vstr(STR1 as string) boolean
+if len(STR1) <> 12 then
+	Vstr=FALSE
+	exit function
+endif
+
+For Count = 1 to 12
+  char1 = MID(STR1,count,1)
+
+  Case Count of
+
+  1 to 3:
+	if char1 >= "a" AND char1 <= "z" Then
+		Vstr=TRUE
+	else
+		Vstr=FALSE
+		Exit function
+	endif
+  4:
+	if char1 = "*" Then
+		Vstr=TRUE
+	else
+		Vstr=FALSE
+		Exit function
+	endif
+  5 to 7:
+	if char1 >= "A" AND char1 <= "Z" Then
+		Vstr=TRUE
+	else
+		Vstr=FALSE
+		Exit function
+	endif
+  8:
+	if char1 = "-" Then
+		Vstr=TRUE
+	else
+		Vstr=FALSE
+		Exit function
+	endif
+  9 to 12:
+	if char1 >= "0" AND char1 <= "9" Then
+		Vstr=TRUE
+	else
+		Vstr=FALSE
+		Exit function
+	endif
+  End Case
+next count
+
+end Function
+
+
+
+input str2bV
+x=Vstr(str2bV)
+
+msgbox x
+
+
+
+
+
+
+
+
+
+
+
