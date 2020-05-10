@@ -1,0 +1,55 @@
+Suppose software wants to check for the following FORMAT.
+99999-AAAAAAA-9
+
+Where; 
+9 is any number from 0 to 9
+A is any letter from A to Z
+
+-----CODE (with Rules Mentioned.)---------
+Input NIC
+
+1. Check for Length
+--------------------
+If Len(NIC) <> 15 Then
+   output "Not Valid"
+   Exit
+Endif
+
+2. Identify fixed positions and check for them
+----------------------------------------------- 
+If MID(NIC,6,1) <> "-" OR _
+   MID(NIC,14,1) <> "-" Then
+
+   output "Not Valid"
+   Exit
+Endif
+
+3. Identify Groups and check for them.
+--------------------------------------
+For Count = 1 to 5
+	Char=MID(NIC,Count,1)
+        If Char >= "0" AND Char <= "9"
+	Else
+     	   output "Not Valid"
+           Exit
+        Endif
+Next Count
+
+For Count = 7 to 13
+	Char=MID(NIC,Count,1)
+        If (Char >= "A" AND Char <= "Z") or (Char >= "a" AND Char <= "z")
+	Else
+     	   output "Not Valid"
+           Exit
+        Endif
+Next Count
+
+For Count = 15 to 15
+	Char=MID(NIC,Count,1)
+        If Char >= "0" AND Char <= "9"
+	Else
+     	   output "Not Valid"
+           Exit
+        Endif
+Next Count
+---------CODE FINISHED--------------
