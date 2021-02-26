@@ -1,0 +1,125 @@
+//10) String Validation (Format check.)
+
+//Visualisation
+9 → Any digit from 0 TO 9
+a → Any small alphabet from a TO z
+A → Any capital alphabet from A to Z
+
+PROMPT : Enter the code as "99-aaa-999"
+INPUT 1: 12-xyz-789
+OUTPUT : Valid input
+
+INPUT 2: 123-jkl
+OUTPUT : Invalid input
+//----------------------------
+//WORKING
+//Breakup of "999-aaa-AAA" working
+//No.1 --LENGTH--
+//No.2 --Fixed characters--
+//No.3 --GROUPS-- E.g: 999, aaa, AAA
+
+//----------------------------
+//DECLARATIONS
+DECLARE Str1: STRING
+DECLARE i : INTEGER
+DECLARE Char1 : CHARACTER
+DECLARE isValid : BOOLEAN //FLAG
+
+//INITIALISATION
+Str1 ← ""
+i ← 0
+Char1 ← ''
+isValid ← TRUE
+
+//INPUT
+INPUT "Enter the code as ""999-aaa-AAA"": ", Str1
+
+//PROCESS
+//Check No. 1 --LENGTH--
+IF LEN(Str1) <> 11 THEN isValid = FALSE
+
+//Check No.2 --Fixed characters--
+IF MID(Str1, 4, 1) <> '-' AND MID(Str1, 8, 1) <> '-' THEN isValid = FALSE
+
+//Check No.3 --GROUPS-- E.g: 999, aaa, AAA
+//Group 1                    123  567  91011
+FOR i ← 1 TO 3
+  Char1 ← MID(Str1, i, 1)
+  IF Char1 < '0' OR Char1 > '9' THEN isValid = FALSE
+NEXT i
+
+//Group 2                            
+FOR i ← 5 TO 7
+  Char1 ← MID(Str1, i, 1)
+  IF Char1 < 'a' OR Char1 > 'z' THEN isValid = FALSE
+NEXT i
+
+//Group 3                            
+FOR i ← 9 TO 11
+  Char1 ← MID(Str1, i, 1)
+  IF Char1 < 'A' OR Char1 > 'Z' THEN isValid = FALSE
+NEXT i
+
+//OUTPUT
+IF isValid THEN
+  OUTPUT "Valid Code."
+ELSE
+  OUTPUT "Invalid Code."
+END IF
+
+------------------------------------
+
+Module Module1
+    '10) String Validation (Format check.)
+    Sub Main()
+        'DECLARATIONS
+        Dim Str1 As String
+        Dim i As Integer
+        Dim Char1 As Char
+        Dim isValid As Boolean
+
+        'INITIALISATION
+        Str1 = ""
+        i = 0
+        Char1 = ""
+        isValid = True
+
+        'INPUT
+        Console.Write("Enter code to validate as ""999-aaa-AAA"": ")
+        Str1 = Console.ReadLine
+
+        'PROCESS
+        'Check No. 1 --LENGTH--
+        If Len(Str1) <> 11 Then isValid = False
+
+        'Check No.2 --Fixed characters--
+        If Mid(Str1, 4, 1) <> "-" And Mid(Str1, 8, 1) <> "-" Then isValid = False
+
+        'Check No.3 --GROUPS-- E.g: 999, aaa, AAA
+        'Group 1                    123  567  91011
+        For i = 1 To 3
+            Char1 = Mid(Str1, i, 1)
+            If Char1 < "0" Or Char1 > "9" Then isValid = False
+        Next i
+
+        'Group 2                            
+        For i = 5 To 7
+            Char1 = Mid(Str1, i, 1)
+            If Char1 < "a" Or Char1 > "z" Then isValid = False
+        Next i
+
+        'Group 3                            
+        For i = 9 To 11
+            Char1 = Mid(Str1, i, 1)
+            If Char1 < "A" Or Char1 > "Z" Then isValid = False
+        Next i
+
+        'OUTPUT
+        If isValid Then
+            Console.WriteLine("Valid Code.")
+        Else
+            Console.WriteLine("Invalid Code")
+        End If
+        Console.ReadKey()
+    End Sub
+End Module

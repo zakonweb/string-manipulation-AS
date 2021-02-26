@@ -1,0 +1,138 @@
+//7) Finding if two strings are Anagram
+
+//ANAGRAM: An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once. For example, ZAFAR, FARAZ, AZFAR
+
+//Visualisation
+INPUT 1: ZAFAR
+INPUT 2: FARAZ
+OUTPUT : ZAFAR and FARAZ are Anagrams.
+
+//----------------------------
+//DECLARATIONS
+DECLARE Str1, Str2 : STRING
+DECLARE isAnagram : BOOLEAN //FLAG
+DECLARE i : INTEGER
+DECLARE Sum1, Sum2 : INTEGER
+DECLARE Char1 : CHARACTER
+
+//INITIALISATION
+Str1 ← ""
+Str2 ← ""
+isAnagram ← TRUE
+i ← 0
+Sum1 ← 0
+Sum2 ← 0
+
+//INPUT
+INPUT "Enter 1st word: ", Str1
+INPUT "Enter 2nd word: ", Str2
+
+//PROCESS
+//CHECK 1
+IF LEN(Str1) <> LEN(Str2) THEN isAnagram = FALSE
+
+//CHECK 2
+FOR i ← 1 TO LEN(Str1)
+  Char1 ← MID(Str1, i, 1)
+  Sum1 ← Sum1 + ASC(Char1)
+NEXT i
+
+FOR i ← 1 TO LEN(Str2)
+  Char1 ← MID(Str2, i, 1)
+  Sum2 ← Sum2 + ASC(Char1)
+NEXT i
+
+IF Sum1 <> Sum2 THEN isAnagram = FALSE
+
+//CHECK 3
+FOR i ← 1 TO LEN(Str1)
+  Char1 ← MID(Str1, i, 1)
+  IF LOCATE(Str2, Char1) = 0 THEN isAnagram = FALSE
+NEXT i
+
+FOR i ← 1 TO LEN(Str2)
+  Char1 ← MID(St2, i, 1)
+  IF LOCATE(Str1, Char1) = 0 THEN isAnagram = FALSE
+NEXT i
+
+//OUTPUT
+IF isAnagram = TRUE
+  THEN
+    OUTPUT Str1 + " and " + Str2 + " are Anagrams."
+  ELSE
+    OUTPUT Str1 + " and " + Str2 + " are NOT Anagram."
+END IF
+
+-------------------
+CHECK 2
+Z    A    F    A    R
+90 + 65 + 70 + 65 + 82 = 372
+
+F    A    R    A    Z
+70 + 65 + 82 + 65 + 90 = 372
+
+----------------------------------------------
+Module Module1
+    '7) Finding if two strings are Anagram
+    Sub Main()
+        'DECLARATIONS
+        Dim Str1, Str2 As String
+        Dim isAnagram As Boolean
+        Dim i, Sum1, Sum2 As Integer
+        Dim Char1 As Char
+
+        'INITIALISATION
+        Str1 = ""
+        Str2 = ""
+        isAnagram = True
+        i = 0
+        Sum1 = 0
+        Sum2 = 0
+        Char1 = ""
+
+        'INPUT
+        Console.Write("Enter 1st word: ")
+        Str1 = Console.ReadLine
+
+        Console.Write("Enter 2nd word: ")
+        Str2 = Console.ReadLine
+
+        'PROCESS
+        'CHECK 1
+        If Len(Str1) <> Len(Str2) Then isAnagram = False
+
+        'CHECK 2
+        For i = 1 To Len(Str1)
+            Char1 = Mid(Str1, i, 1)
+            Sum1 = Sum1 + Asc(Char1)
+        Next i
+
+        For i = 1 To Len(Str2)
+            Char1 = Mid(Str2, i, 1)
+            Sum2 = Sum2 + Asc(Char1)
+        Next i
+
+        If Sum1 <> Sum2 Then isAnagram = False
+
+        'CHECK 3
+        For i = 1 To Len(Str1)
+            Char1 = Mid(Str1, i, 1)
+            If InStr(Str2, Char1) = 0 Then isAnagram = False
+        Next i
+
+        For i = 1 To Len(Str2)
+            Char1 = Mid(Str2, i, 1)
+            If InStr(Str1, Char1) = 0 Then isAnagram = False
+        Next i
+
+        'OUTPUT
+        If isAnagram = True Then
+            Console.WriteLine(Str1 & " and " & Str2 & " are Anagrams.")
+        Else
+            Console.WriteLine(Str1 & " and " & Str2 & " are NOT Anagram.")
+        End If
+
+        Console.ReadKey()
+    End Sub
+
+End Module

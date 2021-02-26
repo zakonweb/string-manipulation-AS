@@ -1,0 +1,86 @@
+//4) Counting number of alphabets and digits in a string
+
+INPUT Str1 
+Str1 = "Z5,.'6afar 568A:li Kh85;4an"
+
+OUTPUT :
+Alphabets are: 12
+Digits are: 8
+
+//Pseudocode
+//DECLARATIONS
+DECLARE Str1 : STRING
+DECLARE Char1 : CHARACTER
+DECLARE i, digitCounter, alphaCounter : INTEGER
+
+//INITIALISE
+Str1 ← ""
+Char1 ← ''
+i ← 0
+alphaCounter ← 0
+digitCounter ← 0
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+
+//PROCESS
+For i ← 1 TO LEN(Str1)
+  Char1 ← MID(Str1, i, 1)
+  Char1 ← UPPER(Char1)
+
+  IF Char1 >= 'A' AND Char1 <= 'Z'
+    THEN
+      alphaCounter ← alphaCounter +1  
+  ELSEIF Char1 >= '0' AND Char1 <= '9'
+    THEN
+      digitCounter ← digitCounter +1
+  END IF
+
+Next i
+
+//OUTPUT
+OUTPUT "Alphabets are: ", alphaCounter
+OUTPUT "Digits are: ", digitCounter
+--------------------------
+
+Module Module1
+    '4) Counting number of alphabets and digits in a string
+    Sub Main()
+        'Declarations
+        Dim Str1 As String
+        Dim Char1 As Char
+        Dim i, digitCounter, alphaCounter As Integer
+
+        'Initialise
+        Str1 = ""
+        Char1 = ""
+        i = 0
+        digitCounter = 0
+        alphaCounter = 0
+
+
+        'Input data
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+
+        'Process
+        For i = 1 To Len(Str1)
+            Char1 = Mid(Str1, i, 1)
+            Char1 = UCase(Char1)
+            If Char1 >= "A" And Char1 <= "Z" Then
+                alphaCounter = alphaCounter + 1
+            ElseIf Char1 >= "0" And Char1 <= "9" Then
+                digitCounter = digitCounter + 1
+            End If
+        Next
+
+        'OUTPUT Result
+        Console.WriteLine("Alphabets are: " & alphaCounter)
+        Console.WriteLine("Digits are: " & digitCounter)
+
+
+        Console.ReadKey()
+    End Sub
+
+End Module
+

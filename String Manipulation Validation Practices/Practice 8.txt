@@ -1,0 +1,85 @@
+//8) Find if a string is Pangram
+
+//PANGRAM: A sentence that contains every letter of the alphabet. For example, A quick brown fox jumps over the lazy dog.
+
+//Visualisation
+INPUT 1: A quick brown fox jumps over the lazy dog.
+OUTPUT : Entered string is a Pangram.
+
+INPUT 2: Zafar Ali Khan
+OUTPUT : Entered string is NOT a Pangram.
+
+//----------------------------
+//DECLARATIONS
+DECLARE Str1, alphabets : STRING
+DECLARE isPangram : BOOLEAN //FLAG
+DECLARE i : INTEGER
+DECLARE Char1 : CHARACTER
+
+//INITIALISATION
+Str1 ← ""
+alphabets ← "abcdefghijklmnopqrstuvwxyz"
+isPangram ← TRUE
+i ← 0
+Char1 ← ''
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+Str1 ← LOWER(Str1)
+
+//PROCESS
+FOR i ← 1 TO LEN(alphabets)
+  Char1 ← MID(alphabets, i, 1)
+  IF LOCATE(Str1, Char1) = 0 THEN isPangram = FALSE
+NEXT i
+
+
+//OUTPUT
+IF isPangram = TRUE
+  THEN
+    OUTPUT "Entered string is a Pangram."
+  ELSE
+    OUTPUT "Entered string is NOT a Pangram."
+END IF
+
+------------------
+Module Module1
+    '8) Find if a string is Pangram
+    Sub Main()
+        'DECLARATIONS
+        Dim Str1, alphabets As String
+        Dim isPangram As Boolean
+        Dim i As Integer
+        Dim Char1 As Char
+
+        'INITIALISATION
+        Str1 = ""
+        alphabets = "abcdefghijklmnopqrstuvwxyz"
+        isPangram = True
+        i = 0
+        Char1 = ""
+
+        'INPUT
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+        Str1 = LCase(Str1)
+
+        'PROCESS
+        For i = 1 To Len(alphabets)
+            Char1 = Mid(alphabets, i, 1)
+            If InStr(Str1, Char1) = 0 Then isPangram = False
+        Next i
+
+
+        'OUTPUT
+        If isPangram = True Then
+            Console.WriteLine("Entered string is a Pangram.")
+        Else
+            Console.WriteLine("Entered string is NOT a Pangram.")
+        End If
+
+        Console.ReadKey()
+    End Sub
+
+End Module
+

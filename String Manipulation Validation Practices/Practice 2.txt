@@ -1,0 +1,79 @@
+2) Finding and truncating a character from a string
+
+INPUT Str1 
+Str1 = "Zafar Ali Khan"
+
+INPUT Char1
+Char1 = 'a'
+
+OUTPUT Str2
+Str2 = "Zfr Ali Khn"
+
+//Pseudocode
+//DECLARATIONS
+DECLARE Str1, Str2 : STRING
+DECLARE Char1, Char2 : CHARACTER
+DECLARE i : INTEGER
+
+//INITIALISE
+Str1 ← ""
+Str2 ← ""
+Char1 ← ''
+Char2 ← ''
+i ← 0
+
+//INPUT
+OUTPUT "Enter string to process: "
+INPUT Str1
+INPUT "Enter character to truncate from the string: ", Char1
+
+//PROCESS
+For i ← 1 TO LEN(Str1)
+  Char2 ← MID(Str1, i, 1)
+  IF Char1 <> Char2
+    THEN
+      Str2 ← Str2 + Char2
+  END IF
+Next i
+
+//OUTPUT
+OUTPUT "Processed string after truncation is: ", Str2
+
+--------------------------------------------------------
+Module Module1
+    '2) Finding and truncating a character from a string
+    Sub Main()
+        'Declarations
+        Dim Str1, Str2 As String
+        Dim Char1, Char2 As Char
+        Dim i As Integer
+
+        'Initialise
+        Str1 = ""
+        Str2 = ""
+        Char1 = ""
+        Char2 = ""
+        i = 0
+
+        'Input data
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+
+        Console.Write("Enter character to truncate from the string: ")
+        Char1 = Console.ReadLine
+
+        'Process
+        For i = 1 To Len(Str1)
+            Char2 = Mid(Str1, i, 1)
+            If Char1 <> Char2 Then
+                Str2 = Str2 & Char2
+            End If
+        Next
+
+        'OUTPUT Result
+        Console.WriteLine("Processed string after truncation is: " & Str2)
+
+        Console.ReadKey()
+    End Sub
+
+End Module

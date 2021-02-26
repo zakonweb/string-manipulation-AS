@@ -1,0 +1,68 @@
+//9) Find abbreviation of given name
+
+//Visualisation
+INPUT 1: A quick brown fox jumps over the lazy dog.
+OUTPUT : AQBFJOTLD
+
+INPUT 2: Zafar Ali Khan
+OUTPUT : ZAK
+
+//----------------------------
+//DECLARATIONS
+DECLARE Str1, Str2: STRING
+DECLARE i : INTEGER
+DECLARE Char1 : CHARACTER
+
+//INITIALISATION
+Str1 ← ""
+Str2 ← ""
+i ← 0
+Char1 ← ''
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+Str1 ← UPPER(Str1)
+Str2 ← LEFT(Str1, 1)
+
+//PROCESS
+FOR i ← 1 TO LEN(Str1)
+  Char1 ← MID(Str1, i, 1)
+  IF Char1 = ' ' THEN Str2 ← Str2 + MID(Str1, i+1, 1)
+NEXT i
+
+
+//OUTPUT
+OUTPUT "Abbreviated string is: ", Str2
+-----------------------------
+
+Module Module1
+    '9) Find abbreviation of given name
+    Sub Main()
+        'DECLARATIONS
+        Dim Str1, Str2 As String
+        Dim i As Integer
+        Dim Char1 As Char
+
+        'INITIALISATION
+        Str1 = ""
+        Str2 = ""
+        i = 0
+        Char1 = ""
+
+        'INPUT
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+        Str1 = UCase(Str1)
+        Str2 = Left(Str1, 1)
+
+        'PROCESS
+        For i = 1 To Len(Str1)
+            Char1 = Mid(Str1, i, 1)
+            If Char1 = " " Then Str2 = Str2 & Mid(Str1, i + 1, 1)
+        Next i
+
+        'OUTPUT
+        Console.WriteLine("Abbreviated string is = " & Str2)
+        Console.ReadKey()
+    End Sub
+End Module

@@ -1,0 +1,66 @@
+//5) Inverse a string
+
+INPUT Str1 
+Str1 = "Zafar"
+
+OUTPUT 
+Str2 = "rafaZ"
+
+//Pseudocode
+//DECLARATIONS
+DECLARE Str1, Str2 : STRING
+DECLARE Char1 : CHARACTER
+DECLARE i INTEGER
+
+//INITIALISE
+Str1 ← ""
+Str2 ← ""
+Char1 ← ''
+i ← 0
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+
+//PROCESS
+For i ← LEN(Str1) TO 1 STEP -1
+  Char1 ← MID(Str1, i, 1)
+  Str2 ← Str2 + Char1
+Next i
+
+//OUTPUT
+OUTPUT "Reversed string is: ", Str2
+
+--------------------------
+
+Module Module1
+    '5) Inverse a string
+    Sub Main()
+        'Declarations
+        Dim Str1, Str2 As String
+        Dim Char1 As Char
+        Dim i As Integer
+
+        'Initialise
+        Str1 = ""
+        Str2 = ""
+        Char1 = ""
+        i = 0
+
+        'Input data
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+
+        'Process
+        For i = Len(Str1) To 1 Step -1
+            Char1 = Mid(Str1, i, 1)
+            Str2 = Str2 & Char1
+        Next
+
+        'OUTPUT Result
+        Console.WriteLine("Reversed string is: " & Str2)
+
+
+        Console.ReadKey()
+    End Sub
+
+End Module

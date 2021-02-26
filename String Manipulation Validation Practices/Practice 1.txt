@@ -1,0 +1,73 @@
+//STRING MANIPULATION
+//Practice 1
+//Finding First word of one string and second word of another string.
+//.Visualisation
+Str1 ← "Atif Aslam"
+Str2 ← "Ricky Martin"
+
+//DECLARATION
+DECLARE Str1, Str2, FN, LN : STRING
+DECLARE Space, Length : INTEGER
+
+//INITIALISATION
+Str1 ← ""
+Str2 ← ""
+FN ← ""
+LN ← ""
+Space ← 0
+LENGTH ← 0
+
+//INPUT
+OUTPUT "Enter Name 1: "
+INPUT Str1
+
+OUTPUT "Enter Name 2: "
+INPUT Str2
+
+//PROCESS
+Space ← LOCATE(Str1, ' ')
+FN ← LEFT(Str1, Space-1)
+
+Space ← LOCATE(Str2, ' ')
+LENGTH ← LEN(Str2)
+LN ← RIGHT(Str2, LENGTH - Space)
+
+//OUTPUT
+OUTPUT "Full new name: " + FN + ' ' + LN
+---------------------------------------------------------------
+
+Module Module1
+
+    Sub Main()
+        'DECLRATION
+        Dim Str1, Str2, FN, LN As String
+        Dim Space, Length As Integer
+
+        'INITIALISATION
+        Str1 = ""
+        Str2 = ""
+        FN = ""
+        LN = ""
+        Space = 0
+        Length = 0
+
+        'INPUT
+        Console.Write("Enter Name 1: ")
+        Str1 = Console.ReadLine()
+
+        Console.Write("Enter Name 2: ")
+        Str2 = Console.ReadLine()
+
+        'PROCESS
+        Space = InStr(Str1, " ")
+        FN = Left(Str1, Space - 1)
+
+        Space = InStr(Str2, " ")
+        Length = Len(Str2)
+        LN = Right(Str2, Length - Space)
+
+        'OUTPUT
+        Console.WriteLine("Full new name: " & FN & " " & LN)
+
+        Console.ReadKey()
+    End Sub

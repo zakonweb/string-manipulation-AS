@@ -1,0 +1,77 @@
+//6) Finding the number of vowels (aeiou) in a string
+
+INPUT Str1 
+Str1 = "Z5,.'6afar 568A:li Kh85;4an"
+
+OUTPUT :
+Vowels in string are: 5
+
+//Pseudocode
+//DECLARATIONS
+DECLARE Str1 : STRING
+DECLARE Char1 : CHARACTER
+DECLARE i, vowelCounter: INTEGER
+
+//INITIALISE
+Str1 ← ""
+Char1 ← ''
+i ← 0
+vowelCounter ← 0
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+
+//PROCESS
+For i ← 1 TO LEN(Str1)
+  Char1 ← MID(Str1, i, 1)
+  Char1 ← UPPER(Char1)
+  IF Char1 = 'A' OR Char1 = 'E' OR Char1 = 'I' _
+     OR Char1 = 'O' OR Char1 = 'U'
+    THEN
+      vowelCounter ← vowelCounter +1
+  END IF
+Next i
+
+
+//OUTPUT
+OUTPUT "Vowels in string are: ", vowelCounter
+
+--------------------------------------------
+Module Module1
+    '6) Finding the number of vowels (aeiou) in a string
+    Sub Main()
+        'Declarations
+        Dim Str1 As String
+        Dim Char1 As Char
+        Dim i, vowelCounter As Integer
+
+        'Initialise
+        Str1 = ""
+        Char1 = ""
+        i = 0
+        vowelCounter = 0
+
+        'Input data
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+
+        'Process
+        For i = 1 To Len(Str1)
+            Char1 = Mid(Str1, i, 1)
+            Char1 = UCase(Char1)
+            If Char1 = "A" Or Char1 = "E" Or _
+                Char1 = "I" Or Char1 = "O" Or _
+                Char1 = "U" Then
+
+                vowelCounter = vowelCounter + 1
+            End If
+        Next
+
+        'OUTPUT Result
+        Console.WriteLine("Vowels in string are: " & vowelCounter)
+
+
+        Console.ReadKey()
+    End Sub
+
+End Module

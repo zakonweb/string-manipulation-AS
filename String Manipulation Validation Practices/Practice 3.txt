@@ -1,0 +1,91 @@
+//3) Finding and replacing a character from a string
+
+INPUT Str1 
+Str1 = "Zafar Ali Khan"
+
+INPUT Char1
+Char1 = 'a'
+
+INPUT Char3
+Char3 = 'x'
+
+OUTPUT Str2
+Str2 = "Zxfxr Ali Khxn"
+
+//Pseudocode
+//DECLARATIONS
+DECLARE Str1, Str2 : STRING
+DECLARE Char1, Char2, Char3 : CHARACTER
+DECLARE i : INTEGER
+
+//INITIALISE
+Str1 ← ""
+Str2 ← ""
+Char1 ← ''
+Char2 ← ''
+Char3 ← ''
+i ← 0
+
+//INPUT
+INPUT "Enter string to process: ", Str1
+INPUT "Enter character to find from the string: ", Char1
+INPUT "Enter character to replace with in string: ", Char3
+
+//PROCESS
+For i ← 1 TO LEN(Str1)
+  Char2 ← MID(Str1, i, 1)
+  IF Char1 <> Char2
+    THEN
+      Str2 ← Str2 + Char2
+    ELSE
+      Str2 ← Str2 + Char3
+  END IF
+Next i
+
+//OUTPUT
+OUTPUT "Processed string after replacementis: ", Str2
+---------------------
+
+Module Module1
+    '3) Finding and replacing of a character from a string
+    Sub Main()
+        'Declarations
+        Dim Str1, Str2 As String
+        Dim Char1, Char2, Char3 As Char
+        Dim i As Integer
+
+        'Initialise
+        Str1 = ""
+        Str2 = ""
+        Char1 = ""
+        Char2 = ""
+        Char3 = ""
+        i = 0
+
+        'Input data
+        Console.Write("Enter string to process: ")
+        Str1 = Console.ReadLine
+
+        Console.Write("Enter character to find from the string: ")
+        Char1 = Console.ReadLine
+
+        Console.Write("Enter character to replace in the string: ")
+        Char3 = Console.ReadLine
+
+        'Process
+        For i = 1 To Len(Str1)
+            Char2 = Mid(Str1, i, 1)
+            If Char1 <> Char2 Then
+                Str2 = Str2 & Char2
+            Else
+                Str2 = Str2 & Char3
+            End If
+        Next
+
+        'OUTPUT Result
+        Console.WriteLine("Processed string after replacement is: " & Str2)
+
+        Console.ReadKey()
+    End Sub
+
+End Module
